@@ -24,7 +24,7 @@ export default function Home() {
     sprites: {
       front_default: string;
     };
-    types: Array<string>;
+    types: string[];
   }
 
   const [pkmList, setPkmList] = useState<Pokemon[]>([]);
@@ -76,6 +76,14 @@ export default function Home() {
               />
               <p>{pkm.name.toUpperCase()}</p>
               <p>Exp: {pkm.base_experience}</p>
+              <div>
+                {pkm.types.map((el: any) => {
+                  if (el.slot === 1) {
+                    return <>Type: {el.type.name.toUpperCase()}</>;
+                  }
+                  return <> & {el.type.name.toUpperCase()}</>;
+                })}
+              </div>
             </div>
           ))}
         </div>
