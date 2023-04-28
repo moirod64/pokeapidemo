@@ -79,9 +79,9 @@ export default function Home() {
               <div>
                 {pkm.types.map((el: any) => {
                   if (el.slot === 1) {
-                    return <>Type: {el.type.name.toUpperCase()}</>;
+                    return `Type: ${el.type.name.toUpperCase()}`;
                   }
-                  return <> & {el.type.name.toUpperCase()}</>;
+                  return ` & ${el.type.name.toUpperCase()}`;
                 })}
               </div>
             </div>
